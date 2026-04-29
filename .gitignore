@@ -23,3 +23,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+
+# docs
+CLAUDE.md
+DESIGN.md
+.claude/
