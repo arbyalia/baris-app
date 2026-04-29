@@ -1,70 +1,185 @@
-# Getting Started with Create React App
+# BARIS — Bisnis Alternatif Risk Intelligent Scoring
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Platform penilaian kelayakan kredit alternatif untuk UMKM Indonesia berbasis AI
 
-## Available Scripts
+![BARIS](public/BARIS.png)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🎯 Tentang BARIS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+BARIS hadir untuk menjawab tantangan nyata: **65 juta UMKM Indonesia** tidak bisa mengakses pembiayaan formal bukan karena mereka tidak layak, melainkan karena sistem kredit konvensional mensyaratkan laporan keuangan dan riwayat perbankan yang hampir mustahil dipenuhi pelaku usaha informal.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+BARIS menilai kelayakan kredit menggunakan **data alternatif non-finansial** yang bisa diakses siapapun:
+- Reputasi digital usaha
+- Sentimen ulasan pelanggan
+- Konsistensi operasional
+- Profil risiko bisnis
 
-### `npm test`
+Hasilnya: **Skor Kredit Alternatif (0–100)** yang transparan, inklusif, dan dilengkapi rekomendasi konkret — tanpa perlu laporan keuangan, tanpa rekening bank, tanpa agunan.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## ✨ Fitur Utama
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Fitur | Deskripsi |
+|---|---|
+| 🗣️ **Conversational Form** | 8 pertanyaan profil usaha dengan antarmuka chat — jawaban tombol pilihan, tidak perlu mengetik panjang |
+| 📸 **OCR Screenshot Ulasan** | Upload screenshot ulasan dari Shopee/Tokopedia/Google Maps — **Azure Computer Vision** baca otomatis |
+| 🤖 **Analisis Sentimen AI** | **Azure AI Language** menganalisis sentimen ulasan pelanggan secara objektif |
+| 📊 **Dashboard Skor Visual** | Skor 0–100 dengan breakdown 4 dimensi, rating A–E, dan AI Confidence Score |
+| 💡 **Score Simulator** | Fitur "Bagaimana Jika?" — simulasi kenaikan skor real-time dengan slider interaktif |
+| 📄 **Laporan PDF Resmi** | Generate laporan PDF berlogo BARIS dengan nomor referensi unik — siap dibawa ke lembaga keuangan |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🧮 Dimensi Penilaian
 
-### `npm run eject`
+```
+Reputasi Digital      (30%) — Sentimen ulasan pelanggan via Azure AI Language
+Konsistensi Operasional (25%) — Hari operasi, platform online, frekuensi update
+Kematangan Bisnis     (25%) — Usia usaha, kategori, skala operasional
+Profil Risiko         (20%) — Diversifikasi produk dan platform
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🛠️ Tech Stack
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+| Kategori | Teknologi |
+|---|---|
+| Frontend | React.js + Tailwind CSS v3 |
+| Routing | React Router DOM |
+| **AI Service 1** | **Azure AI Language** — Sentiment Analysis |
+| **AI Service 2** | **Azure Computer Vision** — OCR Screenshot |
+| Hosting | Azure Static Web Apps |
+| PDF Export | jsPDF + html2canvas |
+| Font | Poppins (Google Fonts) |
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🚀 Cara Menjalankan Lokal
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Prerequisites
+- Node.js v18+
+- npm v9+
+- Akun Azure (untuk API keys)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 1. Clone Repository
 
-### Code Splitting
+```bash
+git clone https://github.com/arbyalia/baris-app.git
+cd baris-app
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 2. Install Dependencies
 
-### Analyzing the Bundle Size
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 3. Setup Environment Variables
 
-### Making a Progressive Web App
+Buat file `.env` di root folder:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```env
+REACT_APP_AZURE_LANGUAGE_KEY=your_azure_language_key
+REACT_APP_AZURE_LANGUAGE_ENDPOINT=https://your-resource.cognitiveservices.azure.com/
 
-### Advanced Configuration
+REACT_APP_AZURE_VISION_KEY=your_azure_vision_key
+REACT_APP_AZURE_VISION_ENDPOINT=https://your-resource.cognitiveservices.azure.com/
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 4. Jalankan Development Server
 
-### Deployment
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Buka [http://localhost:3000](http://localhost:3000) di browser.
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📱 Alur Penggunaan
+
+```
+1. Halaman Utama
+   └── Klik "Mulai Penilaian Gratis"
+       │
+2. Profil Usaha (8 pertanyaan)
+   └── Jawab pertanyaan seputar usaha (kategori, lokasi, platform, dll)
+       │
+3. Ulasan Pelanggan
+   ├── Upload screenshot ulasan → AI baca otomatis (OCR)
+   └── Atau paste manual ulasan
+       │
+4. Proses Analisis AI
+   └── Azure AI Language menganalisis sentimen
+       │
+5. Dashboard Hasil
+   ├── Skor 0–100 + Rating A–E
+   ├── Breakdown 4 dimensi
+   ├── Rekomendasi actionable
+   ├── Score Simulator "Bagaimana Jika?"
+   └── Unduh Laporan PDF Resmi
+```
+
+---
+
+## 🏗️ Struktur Project
+
+```
+baris-app/
+├── public/
+│   ├── index.html
+│   └── BARIS.png
+├── src/
+│   ├── components/
+│   │   ├── onboarding/      # Conversational form components
+│   │   ├── reviews/         # OCR upload + manual input
+│   │   ├── dashboard/       # Score display + dimension cards
+│   │   ├── simulator/       # Score simulator
+│   │   ├── report/          # PDF generator
+│   │   └── shared/          # Reusable components
+│   ├── pages/               # Route-level pages
+│   ├── services/
+│   │   ├── azureLanguage.js # Azure AI Language wrapper
+│   │   └── azureVision.js   # Azure Computer Vision wrapper
+│   ├── utils/
+│   │   ├── scoringEngine.js # Core scoring algorithm
+│   │   ├── recommendations.js
+│   │   └── reviewExtractor.js
+│   └── context/
+│       └── BarisContext.jsx # Global state
+├── CLAUDE.md                # AI coding spec document
+├── DESIGN.md                # Design system guideline
+└── tailwind.config.js
+```
+
+---
+
+## ☁️ Azure Services
+
+| Service | Tier | Fungsi |
+|---|---|---|
+| Azure AI Language | Free F0 | Analisis sentimen ulasan pelanggan |
+| Azure Computer Vision | Free F0 | OCR screenshot ulasan |
+| Azure Static Web Apps | Free | Hosting & auto-deploy dari GitHub |
+
+---
+
+## 🏆 Hackathon
+
+Proyek ini dikembangkan untuk **AI Impact Challenge Dicoding 2026** dalam rangka program **Microsoft Elevate Training Center**.
+
+- **Tema:** No. 19 — Akses Pembiayaan & Credit Scoring UMKM
+- **Kategori:** Real Sector Economy
+- **Developer:** Arby Ali Amaludin
+
+---
+
+## 📄 Lisensi
+
+MIT License — bebas digunakan dan dikembangkan lebih lanjut.
+
+---
