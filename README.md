@@ -11,12 +11,18 @@
 BARIS hadir untuk menjawab tantangan nyata: **65 juta UMKM Indonesia** tidak bisa mengakses pembiayaan formal bukan karena mereka tidak layak, melainkan karena sistem kredit konvensional mensyaratkan laporan keuangan dan riwayat perbankan yang hampir mustahil dipenuhi pelaku usaha informal.
 
 BARIS menilai kelayakan kredit menggunakan **data alternatif non-finansial** yang bisa diakses siapapun:
-- Reputasi digital usaha
-- Sentimen ulasan pelanggan
-- Konsistensi operasional
-- Profil risiko bisnis
+- Reputasi digital usaha dari ulasan pelanggan
+- Konsistensi operasional harian
+- Kematangan dan skala bisnis
+- Profil diversifikasi risiko
 
-Hasilnya: **Skor Kredit Alternatif (0–100)** yang transparan, inklusif, dan dilengkapi rekomendasi konkret — tanpa perlu laporan keuangan, tanpa rekening bank, tanpa agunan.
+Hasilnya: **Skor Kredit Alternatif (0–100)** yang transparan, inklusif, dan dilengkapi rekomendasi konkret — tanpa laporan keuangan, tanpa rekening bank, tanpa agunan.
+
+---
+
+## 🔗 Live Demo
+
+**[baris-app.vercel.app](https://baris-app.vercel.app/)**
 
 ---
 
@@ -36,10 +42,10 @@ Hasilnya: **Skor Kredit Alternatif (0–100)** yang transparan, inklusif, dan di
 ## 🧮 Dimensi Penilaian
 
 ```
-Reputasi Digital      (30%) — Sentimen ulasan pelanggan via Azure AI Language
+Reputasi Digital        (30%) — Sentimen ulasan pelanggan via Azure AI Language
 Konsistensi Operasional (25%) — Hari operasi, platform online, frekuensi update
-Kematangan Bisnis     (25%) — Usia usaha, kategori, skala operasional
-Profil Risiko         (20%) — Diversifikasi produk dan platform
+Kematangan Bisnis       (25%) — Usia usaha, kategori, skala operasional
+Profil Risiko           (20%) — Diversifikasi produk dan platform
 ```
 
 ---
@@ -52,7 +58,7 @@ Profil Risiko         (20%) — Diversifikasi produk dan platform
 | Routing | React Router DOM |
 | **AI Service 1** | **Azure AI Language** — Sentiment Analysis |
 | **AI Service 2** | **Azure Computer Vision** — OCR Screenshot |
-| Hosting | Azure Static Web Apps |
+| Hosting | Vercel |
 | PDF Export | jsPDF + html2canvas |
 | Font | Poppins (Google Fonts) |
 
@@ -107,10 +113,10 @@ Buka [http://localhost:3000](http://localhost:3000) di browser.
    └── Klik "Mulai Penilaian Gratis"
        │
 2. Profil Usaha (8 pertanyaan)
-   └── Jawab pertanyaan seputar usaha (kategori, lokasi, platform, dll)
+   └── Jawab pertanyaan seputar usaha
        │
 3. Ulasan Pelanggan
-   ├── Upload screenshot ulasan → AI baca otomatis (OCR)
+   ├── Upload screenshot → Azure Computer Vision baca otomatis (OCR)
    └── Atau paste manual ulasan
        │
 4. Proses Analisis AI
@@ -135,7 +141,7 @@ baris-app/
 │   └── BARIS.png
 ├── src/
 │   ├── components/
-│   │   ├── onboarding/      # Conversational form components
+│   │   ├── onboarding/      # Conversational form
 │   │   ├── reviews/         # OCR upload + manual input
 │   │   ├── dashboard/       # Score display + dimension cards
 │   │   ├── simulator/       # Score simulator
@@ -151,8 +157,6 @@ baris-app/
 │   │   └── reviewExtractor.js
 │   └── context/
 │       └── BarisContext.jsx # Global state
-├── CLAUDE.md                # AI coding spec document
-├── DESIGN.md                # Design system guideline
 └── tailwind.config.js
 ```
 
@@ -164,7 +168,6 @@ baris-app/
 |---|---|---|
 | Azure AI Language | Free F0 | Analisis sentimen ulasan pelanggan |
 | Azure Computer Vision | Free F0 | OCR screenshot ulasan |
-| Azure Static Web Apps | Free | Hosting & auto-deploy dari GitHub |
 
 ---
 
