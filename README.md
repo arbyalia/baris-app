@@ -8,7 +8,7 @@
 
 ## 🎯 Tentang BARIS
 
-BARIS hadir untuk menjawab tantangan nyata: **65 juta UMKM Indonesia** tidak bisa mengakses pembiayaan formal bukan karena mereka tidak layak, melainkan karena sistem kredit konvensional mensyaratkan laporan keuangan dan riwayat perbankan yang hampir mustahil dipenuhi pelaku usaha informal.
+BARIS hadir untuk menjawab tantangan: **65 juta UMKM Indonesia** tidak bisa mengakses pembiayaan formal bukan karena mereka tidak layak, melainkan karena sistem kredit konvensional mensyaratkan laporan keuangan dan riwayat perbankan yang hampir mustahil dipenuhi pelaku usaha informal.
 
 BARIS menilai kelayakan kredit menggunakan **data alternatif non-finansial** yang bisa diakses siapapun:
 - Reputasi digital usaha dari ulasan pelanggan
@@ -60,7 +60,6 @@ Profil Risiko           (20%) — Diversifikasi produk dan platform
 | **AI Service 2** | **Azure Computer Vision** — OCR Screenshot |
 | Hosting | Vercel |
 | PDF Export | jsPDF + html2canvas |
-| Font | Poppins (Google Fonts) |
 
 ---
 
